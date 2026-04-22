@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Árbol de Decisión — CLAROVTR</title>
+<title>GUIA COMERCIAL EXPRESS — CLAROVTR</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -78,6 +78,8 @@ body{font-family:'Nunito',sans-serif;background:#f0f0f0;min-height:100vh;display
 .warn-text{font-size:11px;font-weight:700;color:#78350F;line-height:1.4}
 .info-box{background:#EFF6FF;border:1.5px solid #93C5FD;border-radius:10px;padding:9px 11px;margin-top:8px;display:flex;gap:7px;align-items:flex-start}
 .info-text{font-size:11px;font-weight:700;color:#1E40AF;line-height:1.4}
+.disclaimer-box{background:#FFF7ED;border:1.5px solid #FB923C;border-radius:10px;padding:9px 11px;margin-bottom:12px;display:flex;gap:7px;align-items:flex-start}
+.disclaimer-text{font-size:11px;font-weight:800;color:#9A3412;line-height:1.4}
 .tnt-box{background:#1a1a1a;border-radius:10px;padding:10px 13px;margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .tnt-label{color:#fff;font-size:11px;font-weight:900;line-height:1.3}
 .tnt-promo{text-align:right}
@@ -144,13 +146,14 @@ body{font-family:'Nunito',sans-serif;background:#f0f0f0;min-height:100vh;display
 .app-prime{background:#1B6CC8;color:#fff}
 .app-disney{background:#0F3B96;color:#fff}
 .app-fanatiz{background:#EA580C;color:#fff}
-.app-rakuten{background:#B91C1C;color:#fff}
-.app-indie{background:#16A34A;color:#fff}
 .app-teatrix{background:#78350F;color:#fff}
 .app-uplus{background:#EA580C;color:#fff}
-.app-directv{background:#1D4ED8;color:#fff}
-.app-movistar{background:#00853F;color:#fff}
 .app-tnplay{background:#CC0000;color:#fff}
+.app-riivi{background:#6B21A8;color:#fff}
+.app-tvnplay{background:#CC0000;color:#fff}
+.app-atresplayer{background:#E11D48;color:#fff}
+.app-cindie{background:#16A34A;color:#fff}
+.app-ondamedia{background:#0891B2;color:#fff}
 .ott-note{font-size:10px;color:#888;font-style:italic;margin-top:5px;line-height:1.4;background:#f3f4f6;border-radius:6px;padding:5px 7px}
 
 /* ── CHANNEL GRID ────────────────────────────────────────────────── */
@@ -168,6 +171,12 @@ body{font-family:'Nunito',sans-serif;background:#f0f0f0;min-height:100vh;display
 .stars-banner{background:linear-gradient(135deg,#1a1a1a,#374151);border-radius:12px;padding:12px;margin-bottom:12px;text-align:center}
 .stars-banner-title{color:#FCD34D;font-size:14px;font-weight:900}
 .stars-banner-sub{color:rgba(255,255,255,.55);font-size:10px;margin-top:3px}
+
+/* ── PREMIUM LIST ────────────────────────────────────────────────── */
+.prem-list{margin-top:6px}
+.prem-row{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:8px;margin-bottom:4px;background:#f8f8f8;border:1px solid #eee}
+.prem-name{font-size:11px;font-weight:800;color:#1a1a1a}
+.prem-price{font-size:13px;font-weight:900;color:#E30613}
 
 /* ── NAV ─────────────────────────────────────────────────────────── */
 .nav-row{display:flex;gap:8px;margin-top:14px}
@@ -193,9 +202,9 @@ body{font-family:'Nunito',sans-serif;background:#f0f0f0;min-height:100vh;display
     </div>
     <div class="header-divider"></div>
     <div class="header-info">
-      <div class="app-title">Árbol de Decisión de Venta</div>
+      <div class="app-title">GUIA COMERCIAL EXPRESS</div>
       <div class="app-sub">Canales Presenciales · Uso interno</div>
-      <div class="update-badge" id="updateBadge">📅 Vigencia: Abril 2025</div>
+      <div class="update-badge" id="updateBadge">📅 Vigencia: Abril 2026</div>
     </div>
   </div>
   <div class="body">
@@ -208,9 +217,8 @@ body{font-family:'Nunito',sans-serif;background:#f0f0f0;min-height:100vh;display
 <script>
 // ════════════════════════════════════════════════════════════════════
 //  ★  ZONA DE DATOS — EDITAR AQUÍ CADA MES  ★
-//  Solo tocar esta sección + el campo VIGENCIA para actualizar
 // ════════════════════════════════════════════════════════════════════
-const VIGENCIA = "Abril 2025";   // ← Cambiar cada mes
+const VIGENCIA = "Abril 2026";
 
 // ── 1 PLAY ────────────────────────────────────────────────────────
 const D1P = [
@@ -233,7 +241,7 @@ const D1P = [
   {marca:'CLARO',    red:'FTTH',mb:940, nombre:'Fibra Experto Stream',              precio:37990,dctoN:12000,promo:25990,dctoT:0,    tac:0,    temp:'',         nota:'',                          star:false}
 ];
 
-// ── 2 PLAY ────────────────────────────────────────────────────────
+// ── 2 PLAY (Solo VTR) ─────────────────────────────────────────────
 const D2P = [
   {marca:'VTR',red:'HFC', mb:null,nombre:'Stream TV Plus + Fono 600 Móvil',          precio:28990,dctoN:0,    promo:0,    dctoT:0,    tac:0,    temp:'',star:false},
   {marca:'VTR',red:'HFC', mb:null,nombre:'Stream TV Premium + Fono 600 Móvil',       precio:35990,dctoN:0,    promo:0,    dctoT:0,    tac:0,    temp:'',star:false},
@@ -255,7 +263,7 @@ const D2P = [
   {marca:'VTR',red:'FTTH',mb:940, nombre:'Doble Pack Inicia Fibra Experto',          precio:47990,dctoN:0,    promo:0,    dctoT:0,    tac:0,    temp:'',star:false}
 ];
 
-// ── 3 PLAY ────────────────────────────────────────────────────────
+// ── 3 PLAY (Solo VTR) ─────────────────────────────────────────────
 const D3P = [
   {marca:'VTR',red:'HFC', mb:500,nombre:'Triple Pack Inicia Hogar',         precio:46990,dctoN:0,    promo:0,    dctoT:0,tac:0,temp:'',star:false},
   {marca:'VTR',red:'HFC', mb:500,nombre:'Triple Pack Plus Hogar',           precio:46990,dctoN:11000,promo:35990,dctoT:0,tac:0,temp:'',star:false},
@@ -300,14 +308,14 @@ const SCREENS = {
 
   precios_menu:{icon:'\uD83D\uDCCB',q:'\u00BFQu\u00E9 tipo de pack?',hint:'Selecciona la cantidad de servicios',choices:[
     {icon:'\u2B50',        label:'Precios Estrella',desc:'Ofertas t\u00E1cticas destacadas del mes', next:'precios_stars'},
-    {icon:'1\uFE0F\u20E3',label:'1 Play',          desc:'Un servicio: Internet, TV o Fono',          next:'precios_1p'},
-    {icon:'2\uFE0F\u20E3',label:'2 Play',          desc:'Combina dos servicios',                     next:'precios_2p'},
-    {icon:'3\uFE0F\u20E3',label:'3 Play',          desc:'Triple pack completo',                      next:'precios_3p'}
+    {icon:'1\uFE0F\u20E3',label:'1 Play',          desc:'Un servicio: Internet, TV o Fono \u2022 CLARO / VTR',next:'precios_1p'},
+    {icon:'2\uFE0F\u20E3',label:'2 Play',          desc:'Combina dos servicios \u2022 Solo VTR',    next:'precios_2p'},
+    {icon:'3\uFE0F\u20E3',label:'3 Play',          desc:'Triple pack completo \u2022 Solo VTR',     next:'precios_3p'}
   ],cols:1},
   precios_stars:{type:'result',icon:'\u2B50',        title:'Precios Estrella',   sub:'Ofertas t\u00E1cticas — '+VIGENCIA,canal:'stars_page'},
-  precios_1p:   {type:'result',icon:'1\uFE0F\u20E3',title:'Precios — 1 Play',   sub:'Internet \u00B7 TV \u00B7 Telefon\u00EDa',canal:'list_1p'},
-  precios_2p:   {type:'result',icon:'2\uFE0F\u20E3',title:'Precios — 2 Play',   sub:'Doble pack de servicios',canal:'list_2p'},
-  precios_3p:   {type:'result',icon:'3\uFE0F\u20E3',title:'Precios — 3 Play',   sub:'Triple pack completo',canal:'list_3p'},
+  precios_1p:   {type:'result',icon:'1\uFE0F\u20E3',title:'Precios — 1 Play',   sub:'Internet \u00B7 TV \u00B7 Telefon\u00EDa \u2022 CLARO / VTR',canal:'list_1p'},
+  precios_2p:   {type:'result',icon:'2\uFE0F\u20E3',title:'Precios — 2 Play',   sub:'Doble pack de servicios \u2022 Solo VTR',canal:'list_2p'},
+  precios_3p:   {type:'result',icon:'3\uFE0F\u20E3',title:'Precios — 3 Play',   sub:'Triple pack completo \u2022 Solo VTR',canal:'list_3p'},
 
   fijo_vertical:  {type:'result',icon:'\uD83C\uDFE2',title:'Verticales — Edificios', sub:'Ofertas destacadas + T\u00E1ctica',canal:'fijo_v'},
   fijo_horizontal:{type:'result',icon:'\uD83C\uDFE1',title:'Horizontales — Casas',   sub:'Ofertas destacadas + T\u00E1ctica',canal:'fijo_h'},
@@ -359,23 +367,49 @@ function ottTier(hdrCls,tier,unicos,hd,hdLbl,apps,nota){
       </div>
     </div>
     <div class="ott-body">
-      <div class="ott-streaming-title">Acceso plataformas de streaming</div>
+      <div class="ott-streaming-title">Plataformas de streaming incluidas</div>
       <div class="ott-apps">${apps.map(a=>ap(a[0],a[1])).join('')}</div>
       ${nota?`<div class="ott-note">\u26A0\uFE0F ${nota}</div>`:''}
     </div>
   </div>`;
 }
 
-// ── TNT BOX ───────────────────────────────────────────────────────────────────
-function tntBox(){
-  return `<div class="tnt-box">
-    <div class="tnt-label">\uD83C\uDFC6 TNT Sports Premium<br><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">Pack deportivo premium · Claro y VTR</span></div>
-    <div class="tnt-promo">
-      <div class="tnt-price">$700</div>
-      <div class="tnt-note">x 2 meses (promo)</div>
-      <div class="tnt-note">luego $13.990/mes</div>
-    </div>
-  </div>`;
+// ── VTR PACKS PREMIUM ─────────────────────────────────────────────────────────
+function vtrPacks(){
+  const items=[
+    {n:'TNT Sports Premium',p:'$13.990'},
+    {n:'TNT Sports SD',     p:'$8.490'},
+    {n:'ESPN Premium',      p:'$9.990'},
+    {n:'HBO Pack',          p:'$7.490'},
+    {n:'Pack Adulto',       p:'$7.490'},
+    {n:'Playboy',           p:'$6.990'},
+    {n:'Noticias',          p:'$300'},
+    {n:"O'Globo (Brasil)",  p:'$5.090'},
+    {n:'Caracol (Colombia)',p:'$4.460'},
+    {n:'HBO MAX',           p:'$9.590'},
+    {n:'Universal+ (OTT)',  p:'$7.490'}
+  ];
+  let h=`<div class="divider"></div><div class="section-label" style="color:#7C3AED">🟣 Planes Premium — VTR</div><div class="prem-list">`;
+  items.forEach(o=>{h+=`<div class="prem-row"><span class="prem-name">${o.n}</span><span class="prem-price">${o.p}</span></div>`;});
+  h+=`</div>`;
+  return h;
+}
+
+// ── CLARO PACKS PREMIUM ───────────────────────────────────────────────────────
+function claroPacks(){
+  const items=[
+    {n:'FOX Hot Pack',                 p:'$7.490', note:''},
+    {n:'Universal',                    p:'$7.000', note:''},
+    {n:'TNT Sports Premium',           p:'$13.990',note:''},
+    {n:'Venus Premium',                p:'$5.490', note:'Solo HFC'},
+    {n:'Pack Adulto Premium',          p:'$6.990', note:'Solo HFC'}
+  ];
+  let h=`<div class="divider"></div><div class="section-label red">🔴 Planes Premium — CLARO</div><div class="prem-list">`;
+  items.forEach(o=>{
+    h+=`<div class="prem-row"><span class="prem-name">${o.n}${o.note?` <span style="font-size:9px;color:#aaa">(${o.note})</span>`:''}</span><span class="prem-price">${o.p}</span></div>`;
+  });
+  h+=`</div>`;
+  return h;
 }
 
 // ── PRICE LIST ────────────────────────────────────────────────────────────────
@@ -403,10 +437,12 @@ function speedGroup(mb,label){
   return `<div class="speed-group"><span class="speed-label">${label}</span>${mb?`<span class="speed-badge">${mb} Megas</span>`:''}</div>`;
 }
 
-function renderPriceList(data){
+function renderPriceList(data,soloVtr){
+  let header='';
+  if(soloVtr) header=`<div class="info-box" style="margin-bottom:10px"><div class="warn-icon">📌</div><div class="info-text">Planes 2 y 3 Play son <strong>exclusivos VTR</strong>. Los planes Streaming pueden tener diferencias de precio entre CLARO y VTR.</div></div>`;
   const groups={};
   data.forEach(p=>{const k=p.mb?p.mb+'M':'TV/Fono';if(!groups[k])groups[k]=[];groups[k].push(p);});
-  let h='';
+  let h=header;
   for(const k in groups){
     const isTV=k==='TV/Fono';
     h+=speedGroup(isTV?null:parseInt(k),isTV?'\uD83D\uDCFA TV / Telefon\u00EDa':'\uD83D\uDCE1 Internet');
@@ -416,7 +452,7 @@ function renderPriceList(data){
   return h;
 }
 
-// ── STAR CARDS ────────────────────────────────────────────────────────────────
+// ── STAR CARDS (genérico — para horizontales y página de estrellas) ─────────
 function starCards(){
   return `
   <div class="section-label red">\u2B50 Precios Estrella del Mes</div>
@@ -462,35 +498,55 @@ function starCards(){
   </div>`;
 }
 
+// ── STAR CARDS VERTICALES (específico para edificios) ─────────────────────────
+function starCardsVertical(){
+  return `
+  <div class="section-label red">\u2B50 Precios Estrella — Verticales</div>
+  <div class="offers-grid">
+    <div class="offer-card star-card">
+      <div class="star-badge">\u2B50 1 Play · Internet</div>
+      <div class="offer-top">
+        <div>
+          <div class="offer-name">Internet Fibra 800 Mbps</div>
+          <div style="font-size:10px;color:#92400E;margin-top:3px">Velocidad: 800 Mbps · CLARO / VTR</div>
+        </div>
+        <div><div class="offer-price star-price">$12.990</div><div class="offer-period">x12 meses</div></div>
+      </div>
+      <div class="tags" style="margin-top:6px">
+        ${tag('tag-green','\u2705 Cuota liberada')}${tag('tag-amber','\u23F1 x12 meses')}${tag('tag-blue','CLARO / VTR')}
+      </div>
+    </div>
+    <div class="offer-card star-card">
+      <div class="star-badge">\u2B50 2 Play · Fibra + Streaming</div>
+      <div class="offer-top">
+        <div>
+          <div class="offer-name">Fibra Hogar + Stream TV Premium 600 Mbps</div>
+          <div style="font-size:10px;color:#92400E;margin-top:3px">Velocidad: 600 Mbps · Solo VTR</div>
+        </div>
+        <div><div class="offer-price star-price">$27.990</div><div class="offer-period">x12 meses</div></div>
+      </div>
+      <div class="tags" style="margin-top:6px">
+        ${tag('tag-green','\u2705 Cuota liberada')}${tag('tag-amber','\u23F1 x12 meses')}${tag('tag-red','Solo VTR')}
+      </div>
+    </div>
+  </div>`;
+}
+
 // ── CHANNEL CARD ──────────────────────────────────────────────────────────────
 function chCard(num,name){
   return `<div class="ch-item hd"><div class="ch-num">${num}</div><div class="ch-name">${name}</div></div>`;
-}
-
-// ── PACKS PREMIUM (solo Claro) ────────────────────────────────────────────────
-function claroPacks(){
-  let h=`<div class="divider"></div><div class="section-label red">\uD83C\uDFAC Packs Premium — Solo Claro</div><div class="offers-grid">`;
-  [{n:'Hotpack',         ch:'305 (Playboy) · 301 (Venus) · 302',p:'$7.490',cls:''},
-   {n:'ESPN Pack',       ch:'473 · 477 · 478 · 479 · 480',      p:'$9.990',cls:''},
-   {n:'Universal+',      ch:'280 · 282 · 283 · 284 · 285',      p:'$7.000',cls:'teal'},
-   {n:'Venus (solo HFC)',ch:'Canal 301',                         p:'$5.490',cls:'gold'},
-   {n:'Playboy (solo HFC)',ch:'Canal 305',                       p:'$5.490',cls:'gold'},
-   {n:'Pack Adulto (solo HFC)',ch:'Venus + Playboy',             p:'$6.990',cls:'gold'}
-  ].forEach(o=>{
-    h+=`<div class="offer-card ${o.cls}"><div class="offer-top"><div class="offer-name">${o.n}</div><div><div class="offer-price">${o.p}</div><div class="offer-period">mensual</div></div></div><div class="tags">${tag('tag-gray','\uD83D\uDCFA '+o.ch)}</div></div>`;
-  });
-  h+=`</div>`;
-  h+=tntBox();
-  return h;
 }
 
 // ── RENDER RESULT ─────────────────────────────────────────────────────────────
 function renderResult(s){
   let h=`<div class="result-header"><div class="result-icon">${s.icon}</div><div class="result-title">${s.title}</div><div class="result-sub">${s.sub}</div></div>`;
 
-  if(s.canal==='list_1p') return h+renderPriceList(D1P);
-  if(s.canal==='list_2p') return h+renderPriceList(D2P);
-  if(s.canal==='list_3p') return h+renderPriceList(D3P);
+  if(s.canal==='list_1p'){
+    h+=`<div class="info-box" style="margin-bottom:10px"><div class="warn-icon">📌</div><div class="info-text">1 Play aplica para <strong>CLARO y VTR</strong>. Los planes Streaming pueden tener diferencias de precio entre marcas.</div></div>`;
+    return h+renderPriceList(D1P,false);
+  }
+  if(s.canal==='list_2p') return h+renderPriceList(D2P,true);
+  if(s.canal==='list_3p') return h+renderPriceList(D3P,true);
 
   if(s.canal==='stars_page'){
     h+=`<div class="stars-banner"><div class="stars-banner-title">\u2B50 Ofertas T\u00E1cticas Destacadas</div><div class="stars-banner-sub">Vigencia ${VIGENCIA} · M\u00E1xima prioridad de venta</div></div>`;
@@ -500,34 +556,33 @@ function renderResult(s){
     return h;
   }
 
-  // ── OTT VTR — sin packs premium ──────────────────────────────────────────
+  // ── OTT VTR ──────────────────────────────────────────────────────────────
   if(s.canal==='ott_v'){
     h+=`<div class="section-label" style="color:#7C3AED">\uD83D\uDCFA Planes TV con streaming — VTR</div>`;
     h+=ottTier('ott-inicia','INICIA','74','57','HD',
-      [['app-hbo','HBO Max'],['app-rakuten','Rakuten'],['app-directv','DIRECTV GO'],['app-teatrix','Teatrix']],
-      'HBO Max (con publicidad). Prime Video y Fanatiz no se ofrecen comercialmente en TV Inicia.');
-    h+=ottTier('ott-plus','PLUS','101','84','HD+HBO',
-      [['app-hbo','HBO Max'],['app-rakuten','Rakuten'],['app-uplus','U+'],['app-directv','DIRECTV GO'],['app-indie','INDIE'],['app-fanatiz','Fanatiz'],['app-prime','Prime Video'],['app-teatrix','Teatrix']],
+      [['app-hbo','HBO MAX'],['app-riivi','Riivi'],['app-prime','Prime Video'],['app-fanatiz','Fanatiz'],['app-teatrix','Teatrix']],
       '');
-    h+=ottTier('ott-premium','PREMIUM','101','84','HD+HBO',
-      [['app-hbo','HBO Max'],['app-rakuten','Rakuten'],['app-uplus','U+'],['app-directv','DIRECTV GO'],['app-teatrix','Teatrix'],['app-indie','INDIE'],['app-fanatiz','Fanatiz'],['app-prime','Prime Video'],['app-disney','Disney+']],
+    h+=ottTier('ott-plus','PLUS','101','84','HD',
+      [['app-hbo','HBO MAX'],['app-riivi','Riivi'],['app-prime','Prime Video'],['app-fanatiz','Fanatiz'],['app-teatrix','Teatrix'],['app-uplus','Universal+']],
       '');
-    h+=tntBox();
-    h+=`<div class="info-box" style="margin-top:8px"><div class="warn-icon">\uD83D\uDCCC</div><div class="info-text">Los Packs Premium (Hotpack, ESPN, Universal+, Venus, Playboy) son exclusivos de Claro. Para ver la grilla de canales VTR consulta tu supervisor.</div></div>`;
+    h+=ottTier('ott-premium','PREMIUM','101','84','HD',
+      [['app-hbo','HBO MAX'],['app-riivi','Riivi'],['app-prime','Prime Video'],['app-fanatiz','Fanatiz'],['app-teatrix','Teatrix'],['app-uplus','Universal+'],['app-disney','Disney+']],
+      '');
+    h+=vtrPacks();
     return h;
   }
 
-  // ── OTT CLARO — con packs premium + botón grilla ─────────────────────────
+  // ── OTT CLARO ────────────────────────────────────────────────────────────
   if(s.canal==='ott_c'){
     h+=`<div class="section-label red">\uD83D\uDCFA Planes TV con streaming — Claro</div>`;
-    h+=ottTier('ott-inicia-c','INICIA','76','65','HD',
-      [['app-hbo','HBO Max'],['app-rakuten','Rakuten'],['app-tnplay','TNpay'],['app-teatrix','Teatrix']],
-      'HBO Max (con publicidad). Prime Video y Fanatiz no se ofrecen comercialmente en TV Inicia.');
-    h+=ottTier('ott-plus-c','PLUS','73','67','HD+HBO',
-      [['app-hbo','HBO Max'],['app-rakuten','Rakuten'],['app-tnplay','TNpay'],['app-uplus','U+'],['app-directv','DIRECTV GO'],['app-indie','INDIE'],['app-fanatiz','Fanatiz'],['app-prime','Prime Video'],['app-movistar','Movistar Play'],['app-teatrix','Teatrix']],
+    h+=ottTier('ott-inicia-c','INICIO','76','65','HD',
+      [['app-hbo','HBO MAX'],['app-riivi','Riivi'],['app-tvnplay','TVNPLAY'],['app-prime','Prime Video'],['app-fanatiz','Fanatiz'],['app-teatrix','Teatrix']],
       '');
-    h+=ottTier('ott-premium-c','PREMIUM','73','67','HD+HBO',
-      [['app-hbo','HBO Max'],['app-rakuten','Rakuten'],['app-tnplay','TNpay'],['app-uplus','U+'],['app-directv','DIRECTV GO'],['app-teatrix','Teatrix'],['app-indie','INDIE'],['app-fanatiz','Fanatiz'],['app-prime','Prime Video'],['app-movistar','Movistar Play'],['app-disney','Disney+']],
+    h+=ottTier('ott-plus-c','PLUS','73','67','HD',
+      [['app-hbo','HBO MAX'],['app-riivi','Riivi'],['app-tvnplay','TVNPLAY'],['app-uplus','Universal+'],['app-atresplayer','Atresplayer'],['app-cindie','Cindie'],['app-prime','Prime Video'],['app-fanatiz','Fanatiz'],['app-teatrix','Teatrix'],['app-ondamedia','Ondamedia']],
+      '');
+    h+=ottTier('ott-premium-c','PREMIUM','73','67','HD',
+      [['app-hbo','HBO MAX'],['app-riivi','Riivi'],['app-tvnplay','TVNPLAY'],['app-uplus','Universal+'],['app-atresplayer','Atresplayer'],['app-cindie','Cindie'],['app-prime','Prime Video'],['app-fanatiz','Fanatiz'],['app-teatrix','Teatrix'],['app-ondamedia','Ondamedia'],['app-disney','Disney+']],
       '');
     h+=claroPacks();
     h+=`<button class="btn-action" onclick="navigate('ott_grilla_claro')">\uD83D\uDCFA Ver Grilla de Canales Claro \u2192</button>`;
@@ -550,35 +605,115 @@ function renderResult(s){
 
   // ── FIJO VERTICAL ────────────────────────────────────────────────────────
   if(s.canal==='fijo_v'){
-    h+=starCards();
-    h+=`<div class="divider"></div><div class="section-label">Otras ofertas — Verticales</div><div class="offers-grid">`;
-    [{n:'1 Play Mega 800',p:'$12.990',per:'T\u00E1ctica',tags:[['tag-green','\u2705 Sin cuota']],cls:''},{n:'2\u20133 Play: dcto 1\u00AA boleta',p:'$10.000',per:'1\u00AA boleta',tags:[['tag-amber','\uD83C\uDFF7 Puntual']],cls:'gold'},{n:'Dcto Consejer\u00EDa',p:'6 meses',per:'Beneficio adicional',tags:[['tag-blue','\uD83C\uDFE2 Solo verticales']],cls:'gold'},{n:'Deco adicional',p:'50%',per:'Descuento deco',tags:[['tag-gray','\uD83D\uDCFA Accesorio']],cls:'gold'}].forEach(o=>{h+=`<div class="offer-card ${o.cls}"><div class="offer-top"><div class="offer-name">${o.n}</div><div><div class="offer-price">${o.p}</div><div class="offer-period">${o.per}</div></div></div><div class="tags">${o.tags.map(([c,t])=>tag(c,t)).join('')}</div></div>`;});
+    h+=`<div class="disclaimer-box"><div class="warn-icon">📌</div><div class="disclaimer-text">Las ofertas son solo para edificios designados en el proyecto.</div></div>`;
+    h+=starCardsVertical();
+    h+=`<div class="divider"></div><div class="section-label">Otras Ofertas Activas — Verticales</div><div class="offers-grid">`;
+
+    // Descuento Conserjería
+    h+=`<div class="offer-card gold">
+      <div class="offer-top">
+        <div><div class="offer-name">Descuento Conserjería</div></div>
+        <div><div class="offer-price" style="color:#D97706">6 meses</div><div class="offer-period">Gratis</div></div>
+      </div>
+      <div style="font-size:11px;font-weight:700;color:#1a1a1a;margin-top:6px">Plan: Fibra Hogar + Fono Ilimitado 600 Móvil</div>
+      <div class="tags">${tag('tag-amber','$23.990 mensual')}${tag('tag-red','Solo VTR')}</div>
+      <div class="warn-box"><div class="warn-icon">⚠️</div><div class="warn-text">Válido siempre que el edificio permita el ingreso para la venta.</div></div>
+    </div>`;
+
+    // Deco Adicional
+    h+=`<div class="offer-card gold">
+      <div class="offer-top">
+        <div><div class="offer-name">Deco Adicional</div></div>
+        <div><div class="offer-price" style="color:#D97706">$2.800</div><div class="offer-period">precio base</div></div>
+      </div>
+      <div class="tags">
+        ${tag('tag-green','✅ 1er deco adicional: 50% dcto')}${tag('tag-gray','2do deco: $2.800 (sin dcto)')}
+      </div>
+    </div>`;
+
+    // Descuento 2-3 Play
+    h+=`<div class="offer-card gold">
+      <div class="offer-top">
+        <div><div class="offer-name">Descuento Planes 2–3 Play</div></div>
+        <div><div class="offer-price" style="color:#D97706">$10.000</div><div class="offer-period">1ª boleta</div></div>
+      </div>
+      <div class="tags">${tag('tag-blue','✅ Sin cuota')}</div>
+    </div>`;
+
     h+=`</div>`;
+    return h;
   }
+
   // ── FIJO HORIZONTAL ──────────────────────────────────────────────────────
   if(s.canal==='fijo_h'){
     h+=starCards();
     h+=`<div class="divider"></div>
-    <div class="section-label">1 Play · Semana t\u00E1ctica</div><div class="offers-grid">
-    <div class="offer-card"><div class="offer-top"><div><div class="offer-name">1 Play Fibra Avanzado 800</div><div style="font-size:10px;color:#aaa;margin-top:2px">\u23F1 12 meses permanencia</div></div><div><div class="offer-price">$12.990</div><div class="offer-period">sem. t\u00E1ctica</div></div></div><div class="tags">${tag('tag-green','\u2705 Cuota liberada (semana t\u00E1ctica)')}</div></div>
-    <div class="offer-card gold"><div class="offer-top"><div class="offer-name">1 Play · Desde semana 2</div></div><div class="tags">${tag('tag-amber','75% ventas \u2192 $12.990')}${tag('tag-red','25% ventas \u2192 $14.990')}${tag('tag-green','Agencias/Directa: libre')}</div></div></div>
-    <div class="divider"></div><div class="section-label">2 Play</div><div class="offers-grid">
     <div class="offer-card teal"><div class="offer-top"><div class="offer-name">2 Play Premium Fibra / HFC VTR</div><div><div class="offer-price">$28.990</div><div class="offer-period">x6 meses</div></div></div><div class="tags">${tag('tag-green','\u2705 Cuota liberada todos los subcanales')}</div></div></div>`;
+    return h;
   }
-  // ── MÓVIL ────────────────────────────────────────────────────────────────
+
+  // ── MÓVIL PORTABILIDAD ───────────────────────────────────────────────────
   if(s.canal==='movil'){
+    // ⚠️ WARNING PRIMERO — antes de cualquier plan
+    h+=`<div class="warn-box" style="margin-bottom:12px"><div class="warn-icon">⚠️</div><div class="warn-text"><strong>Canal Directa: solo POSPOS</strong><br>❌ Prohibido Plan S y Plan M en Directa</div></div>`;
     h+=`<div class="section-label">Planes masivos</div><div class="offers-grid">`;
-    [{n:'Plan MAX M',p:'$9.990',per:'x6 meses',tags:[['tag-gray','POSPOS']]},{n:'Plan MAX L Libre',p:'$7.990',per:'x6 meses',tags:[['tag-blue','Libre']]},{n:'Plan MAX XL Libre',p:'$11.990',per:'x6 meses',tags:[['tag-blue','Libre']]},{n:'Plan MAX Libre Pro',p:'$14.990',per:'x6 meses',tags:[['tag-red','\u2B50 Pro']]}].forEach(o=>{h+=`<div class="offer-card"><div class="offer-top"><div class="offer-name">${o.n}</div><div><div class="offer-price">${o.p}</div><div class="offer-period">${o.per}</div></div></div><div class="tags">${o.tags.map(([c,t])=>tag(c,t)).join('')}</div></div>`;});
+    [{n:'Plan MAX M',p:'$7.794',per:'Promo x6 meses',tags:[['tag-gray','POSPOS'],['tag-amber','Normal $12.990'],['tag-gold','Desde mes 7: $9.743']]},
+     {n:'Plan MAX L Libre',p:'$7.990',per:'x6 meses',tags:[['tag-blue','Libre']]},
+     {n:'Plan MAX XL Libre',p:'$11.990',per:'x6 meses',tags:[['tag-blue','Libre']]},
+     {n:'Plan MAX Libre Pro',p:'$14.990',per:'x6 meses',tags:[['tag-red','\u2B50 Pro']]}
+    ].forEach(o=>{h+=`<div class="offer-card"><div class="offer-top"><div class="offer-name">${o.n}</div><div><div class="offer-price">${o.p}</div><div class="offer-period">${o.per}</div></div></div><div class="tags">${o.tags.map(([c,t])=>tag(c,t)).join('')}</div></div>`;});
     h+=`</div>`;
-    h+=`<div class="warn-box"><div class="warn-icon">\u26A0\uFE0F</div><div class="warn-text">Canal <strong>Directa</strong>: solo POSPOS · Prohibido Plan S y Plan M en Directa</div></div>`;
-    h+=`<div class="divider"></div><div class="section-label">L\u00EDnea adicional (referencia r\u00E1pida)</div><div class="mini-grid"><div class="mini-card"><div class="mini-price">$4.990</div><div class="mini-label">Nuevo o Stock portada</div></div><div class="mini-card"><div class="mini-price">$8.990</div><div class="mini-label">No portada</div></div><div class="mini-card"><div class="mini-price">$3.990</div><div class="mini-label">Stock portada (GGTT)</div></div><div class="mini-card green"><div class="mini-price">\u2705 Todos</div><div class="mini-label">Aplica todos los canales</div></div></div>`;
+    h+=`<div class="divider"></div><div class="section-label">L\u00EDnea adicional (referencia r\u00E1pida)</div>
+    <div class="mini-grid">
+      <div class="mini-card"><div class="mini-price">$4.990</div><div class="mini-label">Nuevo o Stock portada</div></div>
+      <div class="mini-card"><div class="mini-price">$8.990</div><div class="mini-label">No portada</div></div>
+      <div class="mini-card green"><div class="mini-price">\u2705 Todos</div><div class="mini-label">Aplica todos los canales</div></div>
+    </div>`;
+    return h;
   }
+
+  // ── MÓVIL TERRENO ────────────────────────────────────────────────────────
   if(s.canal==='movil_t'){
     h+=`<div class="section-label">Oferta t\u00E1ctica terreno</div><div class="offers-grid">
-    <div class="offer-card"><div class="offer-top"><div><div class="offer-name">Plan MAX M · 40% Dcto</div><div style="font-size:10px;color:#aaa;margin-top:2px">x6 meses · luego precio normal</div></div><div><div class="offer-price">$7.794</div><div class="offer-period">luego $9.743</div></div></div><div class="tags">${tag('tag-amber','\uD83D\uDCCD Solo terreno')}</div></div></div>
-    <div class="divider"></div><div class="section-label">Plan especial</div>
-    <div class="offer-card teal"><div class="offer-top"><div class="offer-name">\uD83D\uDC75 Plan Adulto Mayor</div><div><div class="offer-price">$3.990</div><div class="offer-period">x12 meses</div></div></div><div class="tags">${tag('tag-green','\u2705 Aplicable todos los canales')}</div></div>`;
+    <div class="offer-card">
+      <div class="offer-top">
+        <div>
+          <div class="offer-name">Plan MAX M · T\u00E1ctica 40% Dcto</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px">V\u00EDa ingreso: Portabilidad a Portabilidad</div>
+        </div>
+        <div><div class="offer-price">$7.794</div><div class="offer-period">promo</div></div>
+      </div>
+      <div class="price-row">
+        <span class="price-original">$12.990</span>
+        <span style="font-size:9px;color:#aaa">\u2192 Promo 40% dcto</span>
+        <span class="price-tactico">$7.794</span>
+      </div>
+      <div class="tags">
+        ${tag('tag-amber','\uD83D\uDCCD Solo terreno')}${tag('tag-green','\u2705 Vigente x6 meses')}${tag('tag-gray','Desde mes 7: $9.743')}
+      </div>
+    </div></div>`;
+
+    h+=`<div class="divider"></div><div class="section-label">Plan especial</div>
+    <div class="offer-card teal">
+      <div class="offer-top">
+        <div><div class="offer-name">\uD83D\uDC75 Plan Adulto Mayor</div></div>
+        <div><div class="offer-price" style="font-size:16px;color:#059669">$3.990</div><div class="offer-period">x12 meses</div></div>
+      </div>
+      <div class="tags">${tag('tag-green','\u2705 Aplicable todos los canales')}</div>
+      <div style="margin-top:8px;background:#ECFDF5;border-radius:8px;padding:8px 10px;border:1px solid #6EE7B7">
+        <div style="font-size:10px;font-weight:900;color:#065F46;margin-bottom:5px">\uD83D\uDCCB Condiciones del Plan</div>
+        <div style="font-size:10px;color:#374151;font-weight:700;line-height:1.8">
+          \u2022 Exclusivo para Portabilidad PosPos<br>
+          \u2022 Solo para personas de <strong>70 a\u00F1os o m\u00E1s</strong><br>
+          \u2022 M\u00E1ximo <strong>1 l\u00EDnea</strong> por titular<br>
+          \u2022 Descuento v\u00E1lido por 12 meses, luego <strong>$6.990</strong>
+        </div>
+      </div>
+    </div>`;
+    return h;
   }
+
+  // ── LÍNEA ADICIONAL ──────────────────────────────────────────────────────
   if(s.canal==='la_n_p'){
     h+=`<div class="section-label">L\u00EDnea Adicional — Cliente Nuevo · Ambos portados</div>
     <table class="la-table"><thead><tr><th>Plan Base</th><th>Precio L. Adicional</th></tr></thead><tbody>
@@ -587,9 +722,10 @@ function renderResult(s){
     <tr><td>Plan MAX L Libre</td><td><span class="la-price">$4.990</span></td></tr>
     <tr><td>Plan MAX XL Libre</td><td><span class="la-price">$3.990</span></td></tr>
     <tr><td>Plan MAX Libre Pro</td><td><span class="la-price">$3.990</span></td></tr>
-    </tbody></table>
-    <div class="warn-box" style="margin-top:10px"><div class="warn-icon">\uD83D\uDCCC</div><div class="warn-text">GGTT: Planes M y X = $4.990 · L, XL, LIBRE PRO = $3.990 (solo GGTT)</div></div>`;
+    </tbody></table>`;
+    return h;
   }
+
   if(s.canal==='la_n_np'){
     h+=`<div class="section-label">L\u00EDnea Adicional — Cliente Nuevo · L\u00EDnea no portada</div>
     <table class="la-table"><thead><tr><th>Plan Base</th><th>Precio L. Adicional</th></tr></thead><tbody>
@@ -599,13 +735,17 @@ function renderResult(s){
     <tr><td>Plan MAX XL Libre</td><td><span class="la-price">$8.990</span></td></tr>
     <tr><td>Plan MAX Libre Pro</td><td><span class="la-price">$8.990</span></td></tr>
     </tbody></table>`;
+    return h;
   }
+
   if(s.canal==='la_s'){
     h+=`<div class="section-label">Cliente Stock — Antig\u00FCedad mayor a 7 d\u00EDas</div><div class="offers-grid">
     <div class="offer-card blue"><div class="offer-top"><div><div class="offer-name">L\u00EDnea Adicional PORTADA</div><div style="font-size:10px;color:#aaa;margin-top:2px">Independiente del plan base</div></div><div><div class="offer-price" style="color:#1D4ED8">$4.990</div></div></div><div class="tags">${tag('tag-green','\u2705 Todos los canales')}</div></div>
     <div class="offer-card"><div class="offer-top"><div><div class="offer-name">L\u00EDnea Adicional NO PORTADA</div><div style="font-size:10px;color:#aaa;margin-top:2px">Independiente del plan base</div></div><div><div class="offer-price">$8.990</div></div></div><div class="tags">${tag('tag-green','\u2705 Todos los canales')}</div></div>
     </div>`;
+    return h;
   }
+
   return h;
 }
 
